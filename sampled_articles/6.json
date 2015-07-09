@@ -1,0 +1,87 @@
+[
+    {
+        "content": "_Here's a review of what we covered in this tutorial on text._",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Before this tutorial, we were using number values for most things- passing numbers into functions, storing numbers in variables, etc. As you've now seen, we can also use text values, and we call those **_strings_** in JavaScript - think of them as a \"string\" of letters.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "To create a string, we surround text in matching quotation marks:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\n\"Hello World!\"\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "We have to actually do something with that string - like pass it to the [`text()`](/cs/texttext-x-y/937624625) command:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\ntext(\"Hello World!\", 100, 100);\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "We could also store it in a variable, and then pass that variable into the `text()` command:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\nvar myGreeting = \"Hello World!\";\ntext(myGreeting, 100, 100);\n\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Note that we can also use single quotation marks:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\nvar myGreeting = 'Hello World!';\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "But we *can't* mix and match quotation marks - that's an error! Pick either single or double marks, and stick with it.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\nvar myGreeting = 'Hello World!\"; // oh noes!\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Just like we can manipulate number values, we can also manipulate strings, like if we want to add one string to another string:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\nvar myGreeting = \"Alo\";\nvar myName = \"Winston\";\nvar sayHello = myGreeting + \", \" + myName + \"!\"; // Alo, Winston!\n\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "When we combine strings in JS, we call that \"concatenating strings.\" We can also combine strings with number values, like so:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "```\nvar xPos = 10;\nvar yPos = 20;\nvar label = \"The coordinates are \" + xPos + \", \" + yPos;\n\n```",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "We also saw that we can use different commands to change the text size and text font when we display string using the text() command. You can read more about those in the [text section](/cs/program-docs#cs-documentation-text) of our documentation.",
+        "images": {},
+        "widgets": {}
+    }
+]

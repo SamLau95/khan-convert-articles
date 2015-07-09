@@ -1,0 +1,177 @@
+[
+    {
+        "content": "",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Hint: the background information that will help you complete this activity is found in the videos and articles.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "An important tool for helping protect biodiversity is highlighting which species are most in need of protection, those that are closest to extinction. The Red List of the International Union for Conservation of Nature (IUCN) places species into one of seven categories, ranging from “extinct” to “least concern.” Two additional categories recognize that we do not have enough data even to classify some species. The goal of this activity is to research species (or taxa; singular is taxon) of interest to you and explore the IUCN information available regarding those organisms.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "First, read the descriptions below of the nine IUCN Red categories, as listed on the IUCN website:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "1.     EXTINCT (EX)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Extinct when there is no reasonable doubt that the last individual has died. A taxon is presumed Extinct when exhaustive surveys in known and/or expected habitat, at appropriate times (diurnal, seasonal, annual), throughout its historic range have failed to record an individual. Surveys should be over a time frame appropriate to the taxon’s life cycle and life form.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "2.     EXTINCT IN THE WILD (EW)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Extinct in the Wild when it is known only to survive in cultivation, in captivity or as a naturalized population (or populations) well outside the past range. A taxon is presumed Extinct in the Wild when exhaustive surveys in known and/or expected habitat, at appropriate times (diurnal, seasonal, annual), throughout its historic range have failed to record an individual. Surveys should be over a time frame appropriate to the taxon’s life cycle and life form.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "3.     CRITICALLY ENDANGERED (CR)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Critically Endangered when the best available evidence indicates that it meets any of the criteria A to E for Critically Endangered (see Section V on the website), and it is therefore considered to be facing an extremely high risk of extinction in the wild.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "4.     ENDANGERED (EN)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Endangered when the best available evidence indicates that it meets any of the criteria A to E for Endangered (see Section V on the website), and it is therefore considered to be facing a very high risk of extinction in the wild.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "5.     VULNERABLE (VU)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Vulnerable when the best available evidence indicates that it meets any of the criteria A to E for Vulnerable (see Section V on the website), and it is therefore considered to be facing a high risk of extinction in the wild.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "6.     NEAR THREATENED (NT)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Near Threatened when it has been evaluated against the criteria but does not qualify for Critically Endangered, Endangered or Vulnerable now, but is close to qualifying for or is likely to qualify for a threatened category in the near future.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "7.     LEAST CONCERN (LC)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is listed as Least Concern when it has been evaluated against the criteria and does not qualify for Critically Endangered, Endangered, Vulnerable or Near Threatened. Widespread and abundant taxa are included in this category.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Other categories:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "DATA DEFICIENT (DD)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Data Deficient when there is inadequate information to make a direct, or indirect, assessment of its risk of extinction based on its distribution and/or population status. A taxon in this category may be well studied, and its biology well known, but appropriate data on abundance and/or distribution are lacking. Data Deficient is therefore not a category of threat. Listing of taxa in this category indicates that more information is required and acknowledges the possibility that future research will show that threatened classification is appropriate. It is important to make positive use of whatever data are available. In many cases great care should be exercised in choosing between DD and a threatened status. If the range of a taxon is suspected to be relatively circumscribed, and a considerable period of time has elapsed since the last record of the taxon, threatened status may well be justified.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "NOT EVALUATED (NE)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "A taxon is Not Evaluated when it has not yet been evaluated against the criteria of the IUCN Red List.",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Now that you have read about the IUCN categories, go to [http://www.iucnredlist.org/search](http://www.iucnredlist.org/search) and enter one of the following species names (either the scientific or common name) in the search box:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Cheetah (_Acinonyx jubatus_)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Giant Panda (_Ailuropoda melanoleuca_)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Ivory-billed woodpecker (_Campephilus principalis_)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Red-eyed tree frog (_Agalychnis callidryas_)",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "Locate the species you are searching for among the ones listed and click on the hyperlinked name to answer the following questions:",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "a)    What IUCN category is this species in? What threats does this species face?",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "b)   In what type of habitat can you find this organism?",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "c)    What conservation efforts are being undertaken to help this species?",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "d)   If you could observe this organism in the wild, what is one thing you would most like to observe more closely? Why?",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "",
+        "images": {},
+        "widgets": {}
+    },
+    {
+        "content": "",
+        "images": {},
+        "widgets": {}
+    }
+]

@@ -1,0 +1,287 @@
+<!-- https://www.khanacademy.org/relational-queries-in-sql/a/splitting-data-into-related-tables --><p>So far, we&#39;ve just been working with one table at a time, and seeing what interesting data we can select out of that table. But actually, most of the time, we have our data distributed across multiple tables, and those tables are &quot;related&quot; to each other in some way.</p>
+
+<p>For example, let&#39;s say we have a table for logging how well students do on their tests, and we include emails in case we need to email parents about slipping grades:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>student_name</code></th>
+			<th><code>student_email</code></th>
+			<th><code>test</code></th>
+			<th><code>grade</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Peter Rabbit</td>
+			<td>peter@rabbit.com</td>
+			<td>Nutrition</td>
+			<td>95</td>
+		</tr>
+		<tr>
+			<td>Alice Wonderland</td>
+			<td>alice@wonderland.com</td>
+			<td>Nutrition</td>
+			<td>92</td>
+		</tr>
+		<tr>
+			<td>Peter Rabbit</td>
+			<td>peter@rabbit.com</td>
+			<td>Chemistry</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>Alice Wonderland</td>
+			<td>alice@wonderland.com</td>
+			<td>Chemistry</td>
+			<td>95</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>We might also have a table for logging what books each student reads:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>student_name</code></th>
+			<th><code>book_title</code></th>
+			<th><code>book_author</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Peter Rabbit</td>
+			<td>The Tale of Mrs. Tiggy-Winkle</td>
+			<td>Beatrix Potter</td>
+		</tr>
+		<tr>
+			<td>Peter Rabbit</td>
+			<td>Jabberwocky</td>
+			<td>Lewis Carroll</td>
+		</tr>
+		<tr>
+			<td>Alice Wonderland</td>
+			<td>The Hunting of the Snark</td>
+			<td>Lewis Carroll</td>
+		</tr>
+		<tr>
+			<td>Alice Wonderland</td>
+			<td>Jabberwocky</td>
+			<td>Lewis Carroll</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>We might also have a table just for detailed student information:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>id</code></th>
+			<th><code>student_first</code></th>
+			<th><code>student_last</code></th>
+			<th><code>student_email</code></th>
+			<th><code>phone</code></th>
+			<th><code>birthday</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>Peter</td>
+			<td>Rabbit</td>
+			<td>peter@rabbit.com</td>
+			<td>555-6666</td>
+			<td>2001-05-10</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Alice</td>
+			<td>Wonderland</td>
+			<td>alice@wonderland.com</td>
+			<td>555-4444</td>
+			<td>2001-04-02</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>What do you think of these tables? Would you change them in anyway?</p>
+
+<p><iframe height="80" src="https://s3.amazonaws.com/ka-article-iframes/intro_to_sql/thoughtform.html" width="100%"></iframe></p>
+
+<p>There is one big thing to realize about these tables: they are describing relational data - as in, they are describing data that relates to each other. Each of these tables describe data related to a particular student, and many of the tables replicate the same data. When the same data is replicated across multiple tables, there can be interesting consequences.</p>
+
+<p>For example, what if a student&#39;s email changed? Which tables would we need to change?</p>
+
+<p>We&#39;d need to change the student information table, but since we also included that data in the grades table, we&#39;d also have to find <em>every row</em> about that student, and change the email there too.</p>
+
+<p>It&#39;s often preferable to make sure that a particular column of data is only stored in a <em>single location</em>, so there are less places to update and less risk of having different data in different places. If we do that, we need to make sure we have a way to relate the data across the tables, which we&#39;ll get to later.</p>
+
+<p>Let&#39;s say we decide to remove email from the grades table, because we realize it&#39;s redundant with the email in the student details table. This is what we&#39;d have:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>student_name</code></th>
+			<th><code>test</code></th>
+			<th><code>grade</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Peter Rabbit</td>
+			<td>Nutrition</td>
+			<td>95</td>
+		</tr>
+		<tr>
+			<td>Alice Wonderland</td>
+			<td>Nutrition</td>
+			<td>92</td>
+		</tr>
+		<tr>
+			<td>Peter Rabbit</td>
+			<td>Chemistry</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>Alice Wonderland</td>
+			<td>Chemistry</td>
+			<td>95</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>How could we figure out the email for each student? We could find the row in the student info table, matching by name. What if 2 students had the same name? (Did you know that in Bali, every person has only 1 of 4 possible first names?) We can&#39;t rely on name to look up a student, and really, we should never rely on something like name to identify anything uniquely in a table.</p>
+
+<p>So the best thing to do is to remove the <code>student_name</code> and replace that with <code>student_id</code>, since that is a guaranteed unique identifier:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>student_id</code></th>
+			<th><code>test</code></th>
+			<th><code>grade</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>Nutrition</td>
+			<td>95</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Nutrition</td>
+			<td>92</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Chemistry</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Chemistry</td>
+			<td>95</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>We would make the same change to our books table, using student_id instead of student_name:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>student_id</code></th>
+			<th><code>book_title</code></th>
+			<th><code>book_author</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>The Tale of Mrs. Tiggy-Winkle</td>
+			<td>Beatrix Potter</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Jabberwocky</td>
+			<td>Lewis Carroll</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>The Hunting of the Snark</td>
+			<td>Lewis Carroll</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Jabberwocky</td>
+			<td>Lewis Carroll</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Notice how we have the title and author repeated twice for Jabberwocky? That&#39;s another warning sign that we could break our table up into multiple related tables, so that we don&#39;t have to update multiple places if something changes about a book.</p>
+
+<p>We could have a table just about books:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>id</code></th>
+			<th><code>book_title</code></th>
+			<th><code>book_author</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>The Tale of Mrs. Tiggy-Winkle</td>
+			<td>Beatrix Potter</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Jabberwocky</td>
+			<td>Lewis Carroll</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>The Hunting of the Snark</td>
+			<td>Lewis Carroll</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>And then our <code>student_books</code> table becomes:</p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th><code>student_id</code></th>
+			<th><code>book_id</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>2</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>I know, this table doesn&#39;t look nearly as readable as the old table that had all of information stuffed into every row. But, tables are often not designed to be readable to humans-- they&#39;re designed to be the best way to store data with the highest amount of maintainability and which is the least bug prone. In many cases, it may be best to split information into multiple related tables, so that there is less redundant data and less places to update.</p>
+
+<p>It&#39;s important to understand how to use SQL to deal with data that has been split up into multiple related tables, and bring the data back together across the tables when you need it. We do that using a concept called &quot;join&quot;s and that&#39;s what I&#39;ll show you next.</p>

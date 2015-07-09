@@ -1,0 +1,48 @@
+<!-- https://www.khanacademy.org/text-basics/a/review-text-and-strings --><p><em>Here&#39;s a review of what we covered in this tutorial on text.</em></p>
+
+<p>Before this tutorial, we were using number values for most things- passing numbers into functions, storing numbers in variables, etc. As you&#39;ve now seen, we can also use text values, and we call those <strong><em>strings</em></strong> in JavaScript - think of them as a &quot;string&quot; of letters.</p>
+
+<p>To create a string, we surround text in matching quotation marks:</p>
+
+<pre>
+<code>&quot;Hello World!&quot;</code></pre>
+
+<p>We have to actually do something with that string - like pass it to the <a href="/cs/texttext-x-y/937624625"><code>text()</code></a> command:</p>
+
+<pre>
+<code>text(&quot;Hello World!&quot;, 100, 100);</code></pre>
+
+<p>We could also store it in a variable, and then pass that variable into the <code>text()</code> command:</p>
+
+<pre>
+<code>var myGreeting = &quot;Hello World!&quot;;
+text(myGreeting, 100, 100);
+</code></pre>
+
+<p>Note that we can also use single quotation marks:</p>
+
+<pre>
+<code>var myGreeting = &#39;Hello World!&#39;;</code></pre>
+
+<p>But we *can&#39;t* mix and match quotation marks - that&#39;s an error! Pick either single or double marks, and stick with it.</p>
+
+<pre>
+<code>var myGreeting = &#39;Hello World!&quot;; // oh noes!</code></pre>
+
+<p>Just like we can manipulate number values, we can also manipulate strings, like if we want to add one string to another string:&nbsp;</p>
+
+<pre>
+<code>var myGreeting = &quot;Alo&quot;;
+var myName = &quot;Winston&quot;;
+var sayHello = myGreeting + &quot;, &quot; + myName + &quot;!&quot;; // Alo, Winston!
+</code></pre>
+
+<p>When we combine strings in JS, we call that &quot;concatenating strings.&quot;&nbsp;We can also combine strings with number values, like so:</p>
+
+<pre>
+<code>var xPos = 10;
+var yPos = 20;
+var label = &quot;The coordinates are &quot; + xPos + &quot;, &quot; + yPos;
+</code></pre>
+
+<p>We also saw that we can use different commands to change the text size and text font when we display string using the text() command. You can read more about those in the <a href="/cs/program-docs#cs-documentation-text">text section</a> of our documentation.</p>
